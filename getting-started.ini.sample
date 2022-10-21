@@ -1,0 +1,10 @@
+[default]
+bootstrap.servers=XXXXXX.servicebus.windows.net:9093
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+sasl.username=$ConnectionString
+sasl.password=Endpoint=sb://XXXXXX.servicebus.windows.net/;SharedAccessKeyName=All;SharedAccessKey=XXXXXX;EntityPath=XXXXXX
+
+[consumer]
+group.id=$Default
+request.timeout.ms=60000

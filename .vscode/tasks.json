@@ -4,19 +4,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
+            "label": "Build consumer",
             "type": "shell",
-            "command": "docker build . -t ${workspaceFolderBasename}:latest",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "command": "docker build -f Dockerfile.consumer . -t ${workspaceFolderBasename}-consumer:latest",
         },
         {
-            "label": "Run",
+            "label": "Build producer",
             "type": "shell",
-            "command": "docker run ${workspaceFolderBasename}:latest",
+            "command": "docker build -f Dockerfile.producer . -t ${workspaceFolderBasename}-producer:latest",
+        },
+        {
+            "label": "Run consumer",
+            "type": "shell",
+            "command": "docker run -it ${workspaceFolderBasename}-consumer:latest",
+        },
+        {
+            "label": "Run producer",
+            "type": "shell",
+            "command": "docker run -it ${workspaceFolderBasename}-producer:latest",
         }
     ]
 } 

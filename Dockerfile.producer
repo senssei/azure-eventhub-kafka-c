@@ -1,0 +1,11 @@
+FROM gcc:9.5.0
+
+RUN apt update
+RUN apt install -y librdkafka-dev
+
+WORKDIR /app
+COPY . ./
+
+RUN make producer 
+
+CMD ["./producer", "getting-started.ini"]

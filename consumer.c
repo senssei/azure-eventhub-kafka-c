@@ -74,7 +74,7 @@ int main (int argc, char **argv) {
     while (run) {
         rd_kafka_message_t *consumer_message;
 
-        consumer_message = rd_kafka_consumer_poll(consumer, 500);
+        consumer_message = rd_kafka_consumer_poll(consumer, 1000);
         if (!consumer_message) {
             g_message("Waiting...");
             continue;
@@ -97,7 +97,6 @@ int main (int argc, char **argv) {
                       (char *)consumer_message->payload
                       );
         }
-
         // Free the message when we're done.
         rd_kafka_message_destroy(consumer_message);
     }
