@@ -1,4 +1,4 @@
-# Sample C/C++ consumer and subscriber implementation for Azure EventHub with Kafka surface
+# Sample C/C++ consumer and producer implementation for Azure EventHub with Kafka surface
 
 Since there I wasn't able to find any exisiting libraries for connecting to Azure [EventHub](https://learn.microsoft.com/en-us/azure/event-hubs/) from C/C++ using native [EventHub Kafka surface](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) capabilities and using `librdkafka` to achive it. 
 
